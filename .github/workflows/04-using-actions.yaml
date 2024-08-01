@@ -6,18 +6,18 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: "Checkout Code"
+      - name: Checkout Code
         uses: actions/checkout@v4
 
-      # - name: "Printing Folders"
-      #   run: "ls"
+      - name: Printing Folders
+        run: ls
       
-      - name: "Setup Node"
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20.x'
+      # - name: "Setup Node"
+      #   uses: actions/setup-node@v4
+      #   with:
+      #     node-version: '20.x'
 
-      - name: "Install Dependencies"
-        working-directory: 04-using-actions
-        run: |
-          "npm install"
+      # - name: "Install Dependencies"
+      #   working-directory: 04-using-actions
+      #   run: |
+      #     "npm install"
