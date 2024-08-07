@@ -21,7 +21,7 @@ jobs:
           echo "Runner OS: ${{ github.run_number }}"
       
       - name: "[debug] Print when triggered from main"
-        if: ${{ inputs.debug }}
+        if: ${{ inputs.debug }} == true
         run: "I was triggered from main: ${{ github.ref_name }}"
       
       - name: Greeting
