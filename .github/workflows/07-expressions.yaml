@@ -20,9 +20,9 @@ jobs:
           echo "Commit SHA: ${{ github.sha }}"
           echo "Runner OS: ${{ runner.os }}"
       
-      - name: "[debug] Print when triggered from main"
-        if: ${{inputs.debug && github.ref == 'refs/heads/main'}}
-        run: "I was triggered from main"
+      - name: "[debug] Print when triggered from master"
+        if: ${{inputs.debug && github.ref == 'refs/heads/master'}}
+        run: "I was triggered from master"
       
       - name: Greeting
         run: echo "Hello, world"
