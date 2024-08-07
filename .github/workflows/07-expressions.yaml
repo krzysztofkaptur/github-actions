@@ -22,7 +22,7 @@ jobs:
       
       - name: "[debug] Print when triggered from master"
         if: ${{inputs.debug && github.ref == 'refs/heads/master'}}
-        run: "I was triggered from master"
+        run: echo "I was triggered from master"
       
       - name: Greeting
         run: echo "Hello, world"
