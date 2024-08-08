@@ -7,6 +7,9 @@ jobs:
   echo1:
     runs-on: ubuntu-latest
     steps:
+      - name: Sleep for 20 seconds
+        run: sleep 20
+        
       - name: Failing step
         run: exit 1
       
@@ -20,8 +23,6 @@ jobs:
         run: |
           echo "I will print if any previous step fails."
           
-      - name: Sleep for 20 seconds
-        run: sleep 20
 
       - name: I will execute
         if: ${{ !cancelled() }}
