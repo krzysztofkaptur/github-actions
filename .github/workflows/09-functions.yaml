@@ -29,3 +29,6 @@ jobs:
         if: ${{ cancelled() }}
         run: |
           echo 'I print when cancelled'
+
+      - name: Sleep for 20 seconds
+        run: sleep 20
