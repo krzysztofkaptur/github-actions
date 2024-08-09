@@ -54,4 +54,4 @@ jobs:
     steps: 
       - name: Deploying to prod
         run: |
-          "Deploying to prod..."
+          echo "Deploying to prod..."
