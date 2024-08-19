@@ -1,0 +1,31 @@
+name: 17 - 1 - Custom Actions - Composite
+run-name: 17 - 1 - Custom Actions - Composite | env - ${{ inputs.target-env }}
+
+env:
+  working-directory: 17-custom-actions
+
+on:
+  workflow_dispatch:
+    inputs:
+      target-env: 
+        type: choice
+        options: [dev, prod]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+          working-directory: ${{ env.working-directory }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node and NPM Dependencies
+        uses: ./.github/actions/composite-cache-deps
+        with:
+          key: deps-node-modules-${{ hashFiles('14-artifacts/package-lock.json') }}
+          path: 17-custom-actions/node_modules
+      - name: Test
+        run: npm run test
+      - name: Build
+        run: npm run build
