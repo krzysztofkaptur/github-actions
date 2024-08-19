@@ -23,7 +23,7 @@ jobs:
       - name: Setup Node and NPM Dependencies
         uses: ./.github/actions/composite-cache-deps
         with:
-          key: deps-node-modules-${{ hashFiles('14-artifacts/package-lock.json') }}
+          key: deps-node-modules-${{ hashFiles('17-custom-actions/package-lock.json') }}
           path: 17-custom-actions/node_modules
       - name: Test
         run: npm run test
