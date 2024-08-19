@@ -9,6 +9,10 @@ inputs:
     required: false
     description: The working directory of the application
     default: '.'
+  target-env:
+    required: false
+    description: "'dev' or 'prod'. Controls whether dev dependencies are installed"
+    default: dev
 
 runs:
   using: composite
