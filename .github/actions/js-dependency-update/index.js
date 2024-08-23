@@ -1,6 +1,6 @@
 const core = require('@actions/core')
 const exec = require('@actions/exec')
-const github = required('@actions/github')
+const github = require('@actions/github')
 
 const validateBranchName = ({ branchName }) =>
   /^[a-zA-Z0-9_\-\.\/]+$/.test(branchName)
