@@ -20,4 +20,4 @@ inputs:
     required: true
   debug:
     description: Whether the output debug messages to the console
-    required: false
+    default: 'false'
